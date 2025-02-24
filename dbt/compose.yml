@@ -1,0 +1,16 @@
+services:
+  billing_dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DBT_PROFILES_DIR: /app/.dbt
+    env_file:
+      - .env
+    volumes:
+      - .:/app:delegated
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+
+volumes:
+  app:

@@ -1,0 +1,19 @@
+{
+    "name": "billing_dbt",
+    "dockerComposeFile": "../../dbt/compose.yml",
+    "service": "billing_dbt",
+    "workspaceFolder": "/app",
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "innoverio.vscode-dbt-power-user"
+            ],
+            "settings": {
+                "dbt.enableNewLineagePanel": true,
+                "dbt.prefixGenerateModel": "stg",
+                "dbt.fileNameTemplateGenerateModel": "{prefix}_{sourceName}_{tableName}"
+            }
+        }
+    }
+}
