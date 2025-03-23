@@ -1,0 +1,18 @@
+# dbt生成物
+target/
+dbt_packages/
+
+# ログやキャッシュ
+logs/
+*.log
+__pycache__/
+*.pyc
+
+# OS依存
+.DS_Store
+Thumbs.db
+
+# 環境変数ファイルや認証情報
+.env
+profiles.yml
+*.json

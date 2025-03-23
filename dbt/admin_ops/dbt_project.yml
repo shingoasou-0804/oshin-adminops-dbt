@@ -1,0 +1,36 @@
+name: 'google_cloud_billing_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'admin_ops'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  google_cloud_billing_analytics:
+    # デフォルト設定
+    +materialized: view
+    staging:
+      +materialized: view
+    marts:
+      daily:
+        +schema: marts
+        +tags: ["daily"]
+      monthly:
+        +schema: marts
+        +tags: ["monthly"]
+      monitoring:
+        +schema: marts
+        +tags: ["monitoring"]
+
+vars:
+  google_cloud_project_id: "{{ env_var('GOOGLE_CLOUD_PROJECT_ID') }}"

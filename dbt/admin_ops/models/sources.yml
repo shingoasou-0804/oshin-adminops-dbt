@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: google_cloud_billing
+    database: "{{ env_var('GOOGLE_CLOUD_PROJECT_ID') }}"
+    schema: generative_ai_app_billing
+    tables:
+      - name: gcp_billing_export_v1_015A0B_9E88E8_960BB7
+        loaded_at_field: export_time
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
