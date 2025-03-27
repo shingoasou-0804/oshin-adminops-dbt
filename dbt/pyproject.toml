@@ -9,10 +9,13 @@ readme = "README.md"
 "workflows" = ["py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.9,<3.13"
 elementary-data = {extras = ["bigquery"], version = "^0.16.2"}
 setuptools = "^75.8.1"
 python-dotenv = "^1.0.1"
+dagster = "^1.10.6"
+dagster-dbt = "^0.26.6"
+dagster-gcp = "^0.26.6"
 
 [tool.poetry.group.dev]
 optional = true
